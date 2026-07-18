@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Σύρος Guide — Ενοικιάσεις, Ακίνητα &amp; Φροντίδα Αυτοκινήτου</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --marble:#F1F3F2;
+    --marble-deep:#E4E8E7;
+    --ink:#132635;
+    --navy:#0E3550;
+    --aegean:#2E7FA0;
+    --aegean-bright:#3FA0C4;
+    --terracotta:#C16B3B;
+    --line:#C9D3D2;
+    --radius:2px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+
+  body{
+    background:var(--marble);
+    color:var(--ink);
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3,.serif{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    letter-spacing:.01em;
+  }
+
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- language toggle logic ---------- */
+  body.lang-en .el, body.lang-en .fr,
+  body.lang-el .en, body.lang-el .fr,
+  body.lang-fr .el, body.lang-fr .en{
+    display:none !important;
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(241,243,242,.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1100px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px;
+  }
+  .brand{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.5rem; font-weight:700;
+    letter-spacing:.04em;
+    color:var(--navy);
+  }
+  .brand span{color:var(--terracotta);}
+
+  .lang-switch{display:flex; gap:6px; border:1px solid var(--line); border-radius:999px; padding:3px; background:#fff;}
+  .lang-switch button{
+    font-family:'Jost',sans-serif;
+    font-size:.72rem; letter-spacing:.08em; text-transform:uppercase;
+    padding:7px 14px; border:none; background:transparent; border-radius:999px;
+    cursor:pointer; color:var(--navy); transition:background .2s,color .2s;
+  }
+  .lang-switch button.active{background:var(--navy); color:#fff;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    max-width:1100px; margin:0 auto;
+    padding:72px 24px 0;
+    text-align:center;
+    overflow:hidden;
+  }
+  .eyebrow{
+    font-size:.72rem; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--aegean); margin-bottom:18px; display:block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,5.5vw,4rem);
+    color:var(--navy);
+    max-width:760px; margin:0 auto 20px;
+  }
+  .hero p{
+    max-width:520px; margin:0 auto 44px;
+    color:#3A5468; font-size:1.05rem;
+  }
+  .skyline{width:100%; max-width:900px; margin:0 auto; display:block;}
+
+  /* ---------- sections ---------- */
+  main{max-width:1100px; margin:0 auto; padding:0 24px 40px;}
+
+  .section-label{
+    text-align:center; margin:70px 0 40px;
+  }
+  .section-label .eyebrow{margin-bottom:8px;}
+  .section-label h2{font-size:1.9rem; color:var(--navy);}
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:28px;
+  }
+  @media(max-width:760px){ .grid{grid-template-columns:1fr;} }
+
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px 30px;
+    display:flex; flex-direction:column;
+    position:relative;
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .card:hover{transform:translateY(-3px); box-shadow:0 14px 30px -18px rgba(14,53,80,.35);}
+
+  .card .num{
+    font-family:'Cormorant Garamond',serif;
+    font-size:.85rem; color:var(--aegean-bright); letter-spacing:.1em;
+    margin-bottom:14px;
+  }
+  .card h3{font-size:1.5rem; color:var(--navy); margin-bottom:10px;}
+  .card p{color:#3A5468; font-size:.96rem; flex-grow:1;}
+
+  .card .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.8rem; letter-spacing:.04em;
+    padding:11px 18px;
+    border:1px solid var(--navy);
+    color:var(--navy);
+    border-radius:999px;
+    transition:background .2s,color .2s;
+  }
+  .btn:hover{background:var(--navy); color:#fff;}
+  .btn.primary{background:var(--aegean); border-color:var(--aegean); color:#fff;}
+  .btn.primary:hover{background:var(--navy); border-color:var(--navy);}
+  .btn svg{width:12px; height:12px;}
+
+  .badge-soon{
+    display:inline-block; margin-top:22px;
+    font-size:.72rem; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--terracotta); border:1px dashed var(--terracotta);
+    padding:8px 14px; border-radius:999px; align-self:flex-start;
+  }
+
+  .card.accent{border-top:3px solid var(--aegean);}
+  .card.accent2{border-top:3px solid var(--terracotta);}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line);
+    background:var(--navy);
+    color:#DCE6EC;
+    margin-top:80px;
+  }
+  .footer-inner{
+    max-width:1100px; margin:0 auto; padding:46px 24px;
+    display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px;
+  }
+  footer h4{font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:#fff; margin-bottom:8px;}
+  footer p{font-size:.85rem; color:#AEC3CF; max-width:420px;}
+  .footer-note{width:100%; border-top:1px solid rgba(255,255,255,.12); margin-top:30px; padding-top:20px; font-size:.75rem; color:#7E97A5;}
+</style>
+</head>
+<body class="lang-el">
+
+<header>
+  <div class="header-inner">
+    <div class="brand">Σύρος<span>.</span>Guide</div>
+    <div class="lang-switch">
+      <button data-lang="el" class="active">ΕΛ</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="fr">FR</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <span class="eyebrow el">Ο ΟΔΗΓΟΣ ΤΟΥ ΝΗΣΙΟΥ</span>
+  <span class="eyebrow en">THE ISLAND GUIDE</span>
+  <span class="eyebrow fr">LE GUIDE DE L'ÎLE</span>
+
+  <h1 class="el">Η Σύρος, όπως τη χρειάζεστε</h1>
+  <h1 class="en">Syros, exactly as you need it</h1>
+  <h1 class="fr">Syros, comme vous en avez besoin</h1>
+
+  <p class="el">Ενοικιάσεις οχημάτων, φροντίδα αυτοκινήτου, σπίτια διακοπών και ακίνητα — οι πιο αξιόπιστες υπηρεσίες του νησιού, συγκεντρωμένες σε μία σελίδα.</p>
+  <p class="en">Vehicle rentals, car care, holiday homes and real estate — the island's most trusted services, gathered on one page.</p>
+  <p class="fr">Location de véhicules, entretien automobile, maisons de vacances et immobilier — les services les plus fiables de l'île, réunis sur une seule page.</p>
+
+  <svg class="skyline" viewBox="0 0 900 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="0" y="120" width="900" height="40" fill="var(--marble-deep)"/>
+    <g fill="none" stroke="var(--aegean)" stroke-width="2">
+      <rect x="40" y="90" width="60" height="60" fill="#fff"/>
+      <rect x="110" y="70" width="50" height="80" fill="#fff"/>
+      <rect x="170" y="100" width="70" height="50" fill="#fff"/>
+      <polygon points="380,30 420,80 340,80" fill="#fff"/>
+      <rect x="360" y="80" width="80" height="70" fill="#fff"/>
+      <rect x="450" y="95" width="55" height="55" fill="#fff"/>
+      <rect x="520" y="75" width="45" height="75" fill="#fff"/>
+      <rect x="580" y="100" width="70" height="50" fill="#fff"/>
+      <rect x="680" y="85" width="60" height="65" fill="#fff"/>
+      <rect x="760" y="105" width="55" height="45" fill="#fff"/>
+      <circle cx="400" cy="55" r="10" fill="#fff"/>
+    </g>
+  </svg>
+</section>
+
+<main>
+
+  <!-- CARS & SCOOTERS -->
+  <div class="section-label" id="rentals">
+    <span class="eyebrow el">01 — ΜΕΤΑΚΙΝΗΣΗ</span>
+    <span class="eyebrow en">01 — GETTING AROUND</span>
+    <span class="eyebrow fr">01 — SE DÉPLACER</span>
+    <h2 class="el">Ενοικίαση Αυτοκινήτων &amp; Μηχανών</h2>
+    <h2 class="en">Car &amp; Scooter Rentals</h2>
+    <h2 class="fr">Location de voitures &amp; scooters</h2>
+  </div>
+
+  <div class="grid">
+
+    <div class="card accent">
+      <div class="num">SYRA RENT</div>
+      <h3 class="el">Αυτοκίνητα &amp; σκούτερ, με παράδοση όπου κι αν βρίσκεστε</h3>
+      <h3 class="en">Cars &amp; scooters, delivered wherever you are</h3>
+      <h3 class="fr">Voitures &amp; scooters, livrés où que vous soyez</h3>
+
+      <p class="el">Σύγχρονος στόλος από scooter έως SUV, με online κράτηση, διαφανείς τιμές και παραλαβή από λιμάνι, αεροδρόμιο ή το κατάλυμά σας.</p>
+      <p class="en">A modern fleet from scooters to SUVs, with easy online booking, transparent pricing and pick-up from the port, airport or your accommodation.</p>
+      <p class="fr">Une flotte moderne, du scooter au SUV, avec réservation en ligne, tarifs transparents et prise en charge au port, à l'aéroport ou à votre hébergement.</p>
+
+      <div class="links">
+        <a class="btn primary" href="https://www.syrarent.gr/" target="_blank" rel="noopener">
+          <span class="el">Επίσκεψη στο Syra Rent</span>
+          <span class="en">Visit Syra Rent</span>
+          <span class="fr">Visiter Syra Rent</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="card accent">
+      <div class="num">SMILING CARS</div>
+      <h3 class="el">Οικονομικά και οικογενειακά αυτοκίνητα για κάθε διαδρομή</h3>
+      <h3 class="en">Economy and family cars for every route</h3>
+      <h3 class="fr">Voitures économiques et familiales pour chaque trajet</h3>
+
+      <p class="el">Μεγάλη ποικιλία αυτοκινήτων, απεριόριστα χιλιόμετρα, δωρεάν παιδικά καθίσματα και 24ωρη οδική βοήθεια σε όλη τη Σύρο.</p>
+      <p class="en">A wide range of cars, unlimited mileage, free child seats and 24-hour roadside assistance across Syros.</p>
+      <p class="fr">Un large choix de voitures, kilométrage illimité, sièges enfants gratuits et assistance routière 24h/24 dans toute Syros.</p>
+
+      <div class="links">
+        <a class="btn primary" href="https://smilingcars.gr/" target="_blank" rel="noopener">
+          <span class="el">Επίσκεψη στο Smiling Cars</span>
+          <span class="en">Visit Smiling Cars</span>
+          <span class="fr">Visiter Smiling Cars</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CAR WASH -->
+  <div class="section-label" id="carwash">
+    <span class="eyebrow el">02 — ΦΡΟΝΤΙΔΑ</span>
+    <span class="eyebrow en">02 — CAR CARE</span>
+    <span class="eyebrow fr">02 — ENTRETIEN</span>
+    <h2 class="el">Πλυντήριο Αυτοκινήτων</h2>
+    <h2 class="en">Car Wash</h2>
+    <h2 class="fr">Lavage automobile</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card accent2" style="grid-column:1/-1;">
+      <div class="num">BRILLA WASH &amp; CARE</div>
+      <h3 class="el">Πάνω από 20 χρόνια φροντίδας οχημάτων στην Ερμούπολη</h3>
+      <h3 class="en">Over 20 years of vehicle care in Ermoupolis</h3>
+      <h3 class="fr">Plus de 20 ans de soin automobile à Ermoupolis</h3>
+
+      <p class="el">Επαγγελματικό πλύσιμο αυτοκινήτου και μηχανής, εσωτερικό &amp; εξωτερικό καθαρισμό και κέρωμα, με σύγχρονο εξοπλισμό και οικολογικά υλικά.</p>
+      <p class="en">Professional car and motorbike washing, interior &amp; exterior cleaning and waxing, using modern equipment and eco-friendly products.</p>
+      <p class="fr">Lavage professionnel de voitures et de motos, nettoyage intérieur &amp; extérieur et lustrage, avec un équipement moderne et des produits écologiques.</p>
+
+      <div class="links">
+        <a class="btn primary" href="https://brilla.gr/" target="_blank" rel="noopener">
+          <span class="el">Επίσκεψη στο Brilla</span>
+          <span class="en">Visit Brilla</span>
+          <span class="fr">Visiter Brilla</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HOUSE RENTALS -->
+  <div class="section-label" id="houses">
+    <span class="eyebrow el">03 — ΔΙΑΜΟΝΗ</span>
+    <span class="eyebrow en">03 — STAYING</span>
+    <span class="eyebrow fr">03 — HÉBERGEMENT</span>
+    <h2 class="el">Ενοικίαση Σπιτιών</h2>
+    <h2 class="en">House Rentals</h2>
+    <h2 class="fr">Location de maisons</h2>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="num">SYROS STAYS</div>
+      <h3 class="el">Παραδοσιακά σπίτια, βίλες &amp; studios για τις διακοπές σας</h3>
+      <h3 class="en">Traditional houses, villas &amp; studios for your stay</h3>
+      <h3 class="fr">Maisons traditionnelles, villas &amp; studios pour votre séjour</h3>
+
+      <p class="el">Από παραδοσιακά σπίτια στην Άνω Σύρο έως βίλες με θέα στο Αιγαίο. Σύντομα θα προστεθούν εδώ οι προτεινόμενοι συνεργάτες μας.</p>
+      <p class="en">From traditional houses in Ano Syros to villas overlooking the Aegean. Our recommended partners will be added here soon.</p>
+      <p class="fr">Des maisons traditionnelles à Ano Syros aux villas surplombant la mer Égée. Nos partenaires recommandés seront bientôt ajoutés ici.</p>
+
+      <span class="badge-soon">
+        <span class="el">Σύντομα διαθέσιμο</span>
+        <span class="en">Coming soon</span>
+        <span class="fr">Bientôt disponible</span>
+      </span>
+    </div>
+
+    <!-- REAL ESTATE -->
+    <div class="card">
+      <div class="num">SYROS PROPERTIES</div>
+      <h3 class="el">Αγοραπωλησία Ακινήτων</h3>
+      <h3 class="en">Buying &amp; Selling Real Estate</h3>
+      <h3 class="fr">Achat &amp; vente immobilière</h3>
+
+      <p class="el">Ψάχνετε σπίτι στη Σύρο για αγορά ή πώληση; Σύντομα θα προστεθούν εδώ οι πιο έμπιστοι μεσίτες και κτηματομεσιτικά γραφεία του νησιού.</p>
+      <p class="en">Looking to buy or sell property on Syros? The island's most trusted real-estate agents will be added here soon.</p>
+      <p class="fr">Vous cherchez à acheter ou vendre un bien à Syros ? Les agents immobiliers les plus fiables de l'île seront bientôt ajoutés ici.</p>
+
+      <span class="badge-soon">
+        <span class="el">Σύντομα διαθέσιμο</span>
+        <span class="en">Coming soon</span>
+        <span class="fr">Bientôt disponible</span>
+      </span>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4 class="el">Σύρος.Guide</h4>
+      <h4 class="en">Syros.Guide</h4>
+      <h4 class="fr">Syros.Guide</h4>
+      <p class="el">Ανεξάρτητος οδηγός υπηρεσιών για τη Σύρο. Οι σύνδεσμοι οδηγούν στις επίσημες σελίδες κάθε επιχείρησης.</p>
+      <p class="en">An independent services guide for Syros. Links lead to each business's official website.</p>
+      <p class="fr">Un guide indépendant des services de Syros. Les liens mènent au site officiel de chaque entreprise.</p>
+    </div>
+    <div class="footer-note">
+      <span class="el">© 2026 Σύρος.Guide — Όλα τα σήματα και οι σύνδεσμοι ανήκουν στις αντίστοιχες επιχειρήσεις.</span>
+      <span class="en">© 2026 Syros.Guide — All trademarks and links belong to their respective businesses.</span>
+      <span class="fr">© 2026 Syros.Guide — Toutes les marques et liens appartiennent à leurs entreprises respectives.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.lang-switch button');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      document.body.className = 'lang-' + lang;
+      document.documentElement.lang = lang;
+      buttons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+</script>
+
+</body>
+</html>
