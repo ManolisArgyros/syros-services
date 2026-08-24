@@ -31,7 +31,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Syros Trip Partners">
 <meta property="og:title" data-lang="el" content="Ενοικίαση Αυτοκινήτου &amp; Scooter, Πλύσιμο Αυτοκινήτου | Ερμούπολη, Σύρος">
-<meta name="description" data-lang="el" content="Ενοικίαση αυτοκινήτου και scooter στη Σύρο. Syra Rent και Smiling Cars με παραλαβή από λιμάνι και αεροδρόμιο. Επαγγελματικό πλύσιμο αυτοκινήτου στην Ερμούπολη από το Brilla wash & care.">
+<meta property="og:description" data-lang="el" content="Ενοικίαση αυτοκινήτου και scooter στη Σύρο. Syra Rent και Smiling Cars με παραλαβή από λιμάνι και αεροδρόμιο. Επαγγελματικό πλύσιμο αυτοκινήτου στην Ερμούπολη από το Brilla wash &amp; care.">
 <meta property="og:url" content="https://syrosrent.gr/">
 <meta property="og:locale" content="el_GR">
 <meta property="og:locale:alternate" content="en_GB">
@@ -528,7 +528,7 @@
     margin-bottom:8px;
   }
 
-  .guide-slider{position:relative;}
+  .guide-slider{position:relative;padding-bottom:48px;}
 
   .guide-track{
     display:flex;
@@ -641,9 +641,13 @@
 
   .guide-controls{
     display:flex;
-    justify-content:flex-end;
-    gap:8px;
-    margin-top:15px;
+    justify-content:space-between;
+    position:absolute;
+    inset:0 0 auto;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:2;
+    pointer-events:none;
   }
 
   .guide-control{
@@ -656,11 +660,39 @@
     font-size:1.25rem;
     cursor:pointer;
     transition:.18s ease;
+    pointer-events:auto;
+    box-shadow:0 4px 12px rgba(11,37,49,.12);
   }
 
   .guide-control:hover{
     background:var(--aegean);
     color:#fff;
+  }
+
+  .guide-dots{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+  }
+
+  .guide-dot{
+    width:8px;
+    height:8px;
+    padding:0;
+    border:1px solid var(--aegean);
+    border-radius:50%;
+    background:transparent;
+    cursor:pointer;
+    transition:transform .18s ease,background-color .18s ease;
+  }
+
+  .guide-dot.active{
+    background:var(--ochre);
+    transform:scale(1.35);
   }
 
   @media (max-width:820px){
@@ -986,6 +1018,7 @@
           <button class="guide-control" type="button" data-guide-prev aria-controls="syros-guide-track" aria-label="Προηγούμενες επιλογές">←</button>
           <button class="guide-control" type="button" data-guide-next aria-controls="syros-guide-track" aria-label="Επόμενες επιλογές">→</button>
         </div>
+        <div class="guide-dots" data-guide-ui="dots" aria-label="Επιλογή θέματος"></div>
       </div>
     </div>
   </section>
@@ -1318,6 +1351,7 @@
     document.querySelectorAll('[data-guide-ui="intro"]').forEach(function(el){el.textContent=guide.ui.intro;});
     document.querySelectorAll('[data-guide-ui="track"]').forEach(function(el){el.setAttribute('aria-label',guide.ui.track);});
     document.querySelectorAll('[data-guide-ui="controls"]').forEach(function(el){el.setAttribute('aria-label',guide.ui.controls);});
+    document.querySelectorAll('[data-guide-ui="dots"]').forEach(function(el){el.setAttribute('aria-label',guide.ui.controls);});
     document.querySelectorAll('[data-guide-prev]').forEach(function(el){el.setAttribute('aria-label',guide.ui.prev);});
     document.querySelectorAll('[data-guide-next]').forEach(function(el){el.setAttribute('aria-label',guide.ui.next);});
     document.querySelectorAll('[data-guide-topic]').forEach(function(card){
@@ -1384,6 +1418,49 @@
   }
   var prev = document.querySelector('[data-guide-prev]');
   var next = document.querySelector('[data-guide-next]');
+  var dots = document.querySelector('[data-guide-ui="dots"]');
+  var cards = Array.prototype.slice.call(track.querySelectorAll('.guide-card'));
+  var activeIndex = 0;
+
+  function setActiveDot(index){
+    activeIndex = Math.max(0, Math.min(index, cards.length - 1));
+    if (!dots) return;
+    dots.querySelectorAll('.guide-dot').forEach(function(dot, dotIndex){
+      var isActive = dotIndex === activeIndex;
+      dot.classList.toggle('active', isActive);
+      dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+    });
+  }
+
+  if (dots) {
+    cards.forEach(function(card, index){
+      var dot = document.createElement('button');
+      dot.className = 'guide-dot' + (index === 0 ? ' active' : '');
+      dot.type = 'button';
+      dot.setAttribute('aria-label', 'Επιλογή ' + (index + 1));
+      dot.setAttribute('aria-controls', 'syros-guide-track');
+      dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+      dot.addEventListener('click', function(){
+        track.scrollTo({left: card.offsetLeft - track.offsetLeft, behavior: 'smooth'});
+        setActiveDot(index);
+      });
+      dots.appendChild(dot);
+    });
+  }
+
+  track.addEventListener('scroll', function(){
+    var closestIndex = 0;
+    var closestDistance = Infinity;
+    cards.forEach(function(card, index){
+      var distance = Math.abs(card.offsetLeft - track.scrollLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+    setActiveDot(closestIndex);
+  }, {passive:true});
+
   if (prev) prev.addEventListener('click', function(){ move(-1); });
   if (next) next.addEventListener('click', function(){ move(1); });
 })();
