@@ -12,11 +12,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title data-lang="el">Ενοικίαση Αυτοκινήτου & Scooter Σύρος | Smiling Cars - Syra Rent | Πλύσιμο Αυτοκινήτου Ερμούπολη</title>
+<title data-lang="el">Ενοικίαση Αυτοκινήτου & Scooter Σύρος | Syra Rent - Smiling Cars | Πλύσιμο Αυτοκινήτου Ερμούπολη</title>
 <title data-lang="en" hidden>Car &amp; Scooter Rental, Car Wash | Ermoupolis, Syros</title>
 <title data-lang="fr" hidden>Location Voiture &amp; Scooter, Lavage Auto | Ermoupolis, Syros</title>
 
-<meta name="description" data-lang="el" content="Ενοικίαση αυτοκινήτου και scooter στη Σύρο με τη Smiling Cars και τη Syra Rent, και επαγγελματικό πλύσιμο-περιποίηση αυτοκινήτου με το Brilla wash &amp; care στην Ερμούπολη.">
+<meta name="description" data-lang="el" content="Ενοικίαση αυτοκινήτου και scooter στη Σύρο με τη Syra Rent και τη Smiling Cars, και επαγγελματικό πλύσιμο-περιποίηση αυτοκινήτου με το Brilla wash &amp; care στην Ερμούπολη.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Σύρος.Guide">
 <meta name="msvalidate.01" content="5DC0ED96B9F53F1E0C3A0CCD29C1AA22" />
@@ -30,7 +30,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Syros Trip Partners">
 <meta property="og:title" data-lang="el" content="Ενοικίαση Αυτοκινήτου &amp; Scooter, Πλύσιμο Αυτοκινήτου | Ερμούπολη, Σύρος">
-<meta name="description" data-lang="el" content="Ενοικίαση αυτοκινήτου και scooter στη Σύρο. Smiling Cars και Syra Rent με παραλαβή από λιμάνι και αεροδρόμιο. Επαγγελματικό πλύσιμο αυτοκινήτου στην Ερμούπολη από το Brilla wash & care."><meta property="og:url" content="https://syrosrent.gr/">
+<meta name="description" data-lang="el" content="Ενοικίαση αυτοκινήτου και scooter στη Σύρο. Syra Rent και Smiling Cars με παραλαβή από λιμάνι και αεροδρόμιο. Επαγγελματικό πλύσιμο αυτοκινήτου στην Ερμούπολη από το Brilla wash & care."><meta property="og:url" content="https://syrosrent.gr/">
 <meta property="og:locale" content="el_GR">
 <meta property="og:locale:alternate" content="en_GB">
 <meta property="og:locale:alternate" content="fr_FR">
@@ -122,7 +122,7 @@
   .route{position:relative;padding:20px 0 10px;}
   .route-line{width:100%;height:auto;}
   .route-stops{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:-70px;position:relative;z-index:2;
+    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:-70px;position:relative;z-index:2;
   }
   .stop{text-align:center;}
   .stop-badge{
@@ -239,6 +239,47 @@
     font-size:1.45rem;
   }
 }
+
+  /* ---- Discover Syros guide ---- */
+  .discover-syros{background:#fff;padding:82px 0;border-top:1px solid var(--line);}
+  .discover-intro{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px;}
+  .discover-intro h2{font-size:clamp(1.8rem,3.8vw,2.55rem);color:var(--aegean-deep);max-width:14ch;}
+  .discover-intro p{max-width:48ch;color:#52625E;margin:0;}
+  .discover-kicker{font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--terracotta);margin-bottom:8px;}
+  .guide-slider{position:relative;}
+  .guide-track{display:flex;gap:18px;overflow-x:auto;padding:2px 2px 18px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--ochre) #ece8df;}
+  .guide-track::-webkit-scrollbar{height:7px;}
+  .guide-track::-webkit-scrollbar-track{background:#ece8df;border-radius:999px;}
+  .guide-track::-webkit-scrollbar-thumb{background:var(--ochre);border-radius:999px;}
+  .guide-card{flex:0 0 calc((100% - 36px) / 3);min-height:335px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;padding:24px;border-radius:5px;text-decoration:none;color:#fff;scroll-snap-align:start;isolation:isolate;transition:transform .2s ease,box-shadow .2s ease;}
+  .guide-card:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(11,37,49,.18);}
+  .guide-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(9,31,41,.03) 20%,rgba(9,31,41,.88) 100%);}
+  .guide-card::after{content:"";position:absolute;width:180px;height:180px;border:1px solid rgba(255,255,255,.36);border-radius:50%;right:-48px;top:-52px;z-index:-2;}
+  .guide-card{background-color:var(--aegean);background-size:cover;background-position:center;}
+  .guide-beaches{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Delfini_beach%2C_Syros%2C_Greece_-_panoramio.jpg?width=1600");}
+  .guide-food{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Syros_Ermoupoli_habourside_tavern.jpg?width=1600");}
+  .guide-sea{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Asteria_Beach%2C_Ermoupolis%2C_Syros%2C_Greece_2.jpg?width=1600");}
+  .guide-kids{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Agathopes_beach%2C_Syros_island%2C_Greece_-_panoramio.jpg?width=1600");}
+  .guide-night{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Night_view_of_Ermoupoli.jpg?width=1600");}
+  .guide-art{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Theatron_Apollon_in_Syros_island.jpeg?width=1600");}
+  .guide-landmarks{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/City_Hall%2C_Ermoupolis%2C_Syros.JPG?width=1600");}
+  .guide-museums{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Ship_Model_Industrial_Museum_of_Ermoupolis%2C_Syros%2C_File-Greece_2.jpg?width=1600");}
+  .guide-villages{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/Finikas_%28Foinikas%29%2C_Syros%2C_Greece_13.jpg?width=1600");}
+  .guide-walks{background-image:url("https://commons.wikimedia.org/wiki/Special:FilePath/View_from_Ano_Syros_1.jpg?width=1600");}
+  .guide-card-icon{font-size:3rem;line-height:1;margin-bottom:auto;filter:drop-shadow(0 3px 5px rgba(0,0,0,.16));}
+  .guide-card .guide-label{font-size:.69rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0 0 7px;color:#ffe0a8;}
+  .guide-card h3{font-size:1.45rem;line-height:1.12;margin:0 0 9px;}
+  .guide-card .guide-copy{font-size:.88rem;line-height:1.45;margin:0 0 18px;color:rgba(255,255,255,.9);}
+  .guide-card .guide-link{font-size:.76rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;}
+  .guide-controls{display:flex;justify-content:flex-end;gap:8px;margin-top:15px;}
+  .guide-control{width:42px;height:42px;border:1px solid var(--aegean);background:#fff;color:var(--aegean);border-radius:50%;font-size:1.25rem;cursor:pointer;transition:.18s ease;}
+  .guide-control:hover{background:var(--aegean);color:#fff;}
+  @media (max-width:820px){
+    .discover-syros{padding:58px 0;}
+    .discover-intro{align-items:start;flex-direction:column;margin-bottom:24px;}
+    .guide-card{flex-basis:82%;min-height:320px;}
+  }
+  @media (max-width:480px){.guide-card{flex-basis:88%;}}
 </style>
 </head>
 <body>
@@ -311,13 +352,13 @@
   </section>
 
   <!-- JOURNEY -->
-  <section class="journey wrap">
-    <h2 data-lang="el" class="active">Το ταξίδι σας, βήμα-βήμα</h2>
+  <section class="journey wrap" id="journey" aria-labelledby="journey-title-el">
+    <h2 id="journey-title-el" data-lang="el" class="active">Το ταξίδι σας, βήμα-βήμα</h2>
     <h2 data-lang="en">Your trip, step by step</h2>
     <h2 data-lang="fr">Votre séjour, étape par étape</h2>
-    <p class="active sub" data-lang="el">Τρεις σταθμοί, τρεις επιχειρήσεις, μία εμπειρία χωρίς έγνοιες.</p>
-    <p class="sub" data-lang="en">Three stops, three businesses, one worry-free experience.</p>
-    <p class="sub" data-lang="fr">Trois étapes, trois entreprises, une expérience sans souci.</p>
+    <p class="active sub" data-lang="el">Τέσσερις σταθμοί, τρεις επιχειρήσεις, μία εμπειρία χωρίς έγνοιες.</p>
+    <p class="sub" data-lang="en">Four stops, three businesses, one worry-free experience.</p>
+    <p class="sub" data-lang="fr">Quatre étapes, trois entreprises, une expérience sans souci.</p>
 
     <div class="route">
       <svg class="route-line" viewBox="0 0 1000 90" preserveAspectRatio="none" aria-hidden="true">
@@ -337,14 +378,21 @@
         </div>
         <div class="stop">
           <div class="stop-badge">
-            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="9" width="18" height="8" rx="2" stroke-width="1.6"/><circle cx="7.5" cy="19" r="1.6" stroke-width="1.6"/><circle cx="16.5" cy="19" r="1.6" stroke-width="1.6"/><path d="M5 9l2-4h10l2 4" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="18" r="3" stroke-width="1.6"/><circle cx="18" cy="18" r="3" stroke-width="1.6"/><path d="M6 18l4-9h4l3 5h3M10 9L8 6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h3 data-lang="el" class="active">Ενοικίαση</h3>
-          <h3 data-lang="en">Rental</h3>
-          <h3 data-lang="fr">Location</h3>
-          <p data-lang="el" class="active">Smiling Cars &amp; Syra Rent</p>
-          <p data-lang="en">Smiling Cars &amp; Syra Rent</p>
-          <p data-lang="fr">Smiling Cars &amp; Syra Rent</p>
+          <h3>Syra Rent</h3>
+          <p data-lang="el" class="active">Αυτοκίνητα &amp; scooters online</p>
+          <p data-lang="en">Cars &amp; scooters online</p>
+          <p data-lang="fr">Voitures &amp; scooters en ligne</p>
+        </div>
+        <div class="stop">
+          <div class="stop-badge">
+            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="20" height="8" rx="2" stroke-width="1.6"/><circle cx="7" cy="19" r="1.8" stroke-width="1.6"/><circle cx="17" cy="19" r="1.8" stroke-width="1.6"/><path d="M4 9l2-4.5h12L20 9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Smiling Cars</h3>
+          <p data-lang="el" class="active">Ενοικίαση αυτοκινήτου</p>
+          <p data-lang="en">Car rental</p>
+          <p data-lang="fr">Location de voiture</p>
         </div>
         <div class="stop">
           <div class="stop-badge">
@@ -366,56 +414,12 @@
 
     <article class="biz-card biz-1" itemscope itemtype="https://schema.org/AutoRental">
       <div class="biz-icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="20" height="8" rx="2" stroke="#12384B" stroke-width="1.4"/><circle cx="7" cy="19" r="1.8" stroke="#12384B" stroke-width="1.4"/><circle cx="17" cy="19" r="1.8" stroke="#12384B" stroke-width="1.4"/><path d="M4 9l2-4.5h12L20 9" stroke="#12384B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </div>
-      <div>
-        <p class="active biz-eyebrow" data-lang="el">01 &middot; Ενοικίαση Αυτοκινήτου</p>
-        <p class="biz-eyebrow" data-lang="en">01 &middot; Car Rental</p>
-        <p class="biz-eyebrow" data-lang="fr">01 &middot; Location de Voiture</p>
-
-        <h3 itemprop="name">Smiling Cars</h3>
-
-        <p class="active desc" data-lang="el" itemprop="description">Ενοικίαση αυτοκινήτου με το χαμόγελο. Η Smiling Cars σας υποδέχεται στο λιμάνι ή στο αεροδρόμιο της Σύρου με έναν στόλο από οικονομικά, οικογενειακά και αυτόματα αυτοκίνητα, έτοιμα να εξερευνήσετε τις παραλίες και τα χωριά του νησιού.</p>
-        <p class="desc" data-lang="en">Car rental with a smile. Smiling Cars welcomes you at the port or airport of Syros with a fleet of economy, family and automatic cars, ready to help you explore the island's beaches and villages.</p>
-        <p class="desc" data-lang="fr">La location de voiture avec le sourire. Smiling Cars vous accueille au port ou à l'aéroport de Syros avec une flotte de voitures économiques, familiales et automatiques, prêtes à explorer les plages et les villages de l'île.</p>
-
-        <ul class="feature-list">
-          <li data-lang="el" class="active">Δωρεάν παράδοση &amp; παραλαβή</li>
-          <li data-lang="en">Free delivery &amp; pick-up</li>
-          <li data-lang="fr">Livraison &amp; reprise gratuites</li>
-
-          <li data-lang="el" class="active">Απεριόριστα χιλιόμετρα</li>
-          <li data-lang="en">Unlimited mileage</li>
-          <li data-lang="fr">Kilométrage illimité</li>
-
-          <li data-lang="el" class="active">24ωρη οδική βοήθεια</li>
-          <li data-lang="en">24/7 roadside assistance</li>
-          <li data-lang="fr">Assistance routière 24h/24</li>
-
-          <li data-lang="el" class="active">Δωρεάν επιπλέον οδηγός</li>
-          <li data-lang="en">Free additional driver</li>
-          <li data-lang="fr">Conducteur supplémentaire gratuit</li>
-        </ul>
-
-        <div class="cta-row">
-          <a class="btn" data-href-el="https://smilingcars.gr" data-href-en="https://smilingcars.gr/en/" data-href-fr="https://smilingcars.gr/fr/" href="https://smilingcars.gr" target="_blank" rel="noopener">
-            <span data-lang="el" class="active">Δείτε τον στόλο</span>
-            <span data-lang="en">See the fleet</span>
-            <span data-lang="fr">Voir la flotte</span>
-          </a>
-          <span class="tel">smilingcars.gr</span>
-        </div>
-      </div>
-    </article>
-
-    <article class="biz-card biz-2" itemscope itemtype="https://schema.org/AutoRental">
-      <div class="biz-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="18" r="3" stroke="#12384B" stroke-width="1.4"/><circle cx="18" cy="18" r="3" stroke="#12384B" stroke-width="1.4"/><path d="M6 18l4-9h4l3 5h3M10 9L8 6" stroke="#12384B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div>
-        <p class="active biz-eyebrow" data-lang="el">02 &middot; Online Ενοικίαση &amp; Scooters</p>
-        <p class="biz-eyebrow" data-lang="en">02 &middot; Online Rentals &amp; Scooters</p>
-        <p class="biz-eyebrow" data-lang="fr">02 &middot; Location en Ligne &amp; Scooters</p>
+        <p class="active biz-eyebrow" data-lang="el">01 &middot; Online Ενοικίαση &amp; Scooters</p>
+        <p class="biz-eyebrow" data-lang="en">01 &middot; Online Rentals &amp; Scooters</p>
+        <p class="biz-eyebrow" data-lang="fr">01 &middot; Location en Ligne &amp; Scooters</p>
 
         <h3 itemprop="name">Syra Rent</h3>
 
@@ -448,6 +452,50 @@
             <span data-lang="fr">Réservez maintenant</span>
           </a>
           <span class="tel">syrarent.gr</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="biz-card biz-2" itemscope itemtype="https://schema.org/AutoRental">
+      <div class="biz-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="9" width="20" height="8" rx="2" stroke="#12384B" stroke-width="1.4"/><circle cx="7" cy="19" r="1.8" stroke="#12384B" stroke-width="1.4"/><circle cx="17" cy="19" r="1.8" stroke="#12384B" stroke-width="1.4"/><path d="M4 9l2-4.5h12L20 9" stroke="#12384B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <p class="active biz-eyebrow" data-lang="el">02 &middot; Ενοικίαση Αυτοκινήτου</p>
+        <p class="biz-eyebrow" data-lang="en">02 &middot; Car Rental</p>
+        <p class="biz-eyebrow" data-lang="fr">02 &middot; Location de Voiture</p>
+
+        <h3 itemprop="name">Smiling Cars</h3>
+
+        <p class="active desc" data-lang="el" itemprop="description">Ενοικίαση αυτοκινήτου με το χαμόγελο. Η Smiling Cars σας υποδέχεται στο λιμάνι ή στο αεροδρόμιο της Σύρου με έναν στόλο από οικονομικά, οικογενειακά και αυτόματα αυτοκίνητα, έτοιμα να εξερευνήσετε τις παραλίες και τα χωριά του νησιού.</p>
+        <p class="desc" data-lang="en">Car rental with a smile. Smiling Cars welcomes you at the port or airport of Syros with a fleet of economy, family and automatic cars, ready to help you explore the island's beaches and villages.</p>
+        <p class="desc" data-lang="fr">La location de voiture avec le sourire. Smiling Cars vous accueille au port ou à l'aéroport de Syros avec une flotte de voitures économiques, familiales et automatiques, prêtes à explorer les plages et les villages de l'île.</p>
+
+        <ul class="feature-list">
+          <li data-lang="el" class="active">Δωρεάν παράδοση &amp; παραλαβή</li>
+          <li data-lang="en">Free delivery &amp; pick-up</li>
+          <li data-lang="fr">Livraison &amp; reprise gratuites</li>
+
+          <li data-lang="el" class="active">Απεριόριστα χιλιόμετρα</li>
+          <li data-lang="en">Unlimited mileage</li>
+          <li data-lang="fr">Kilométrage illimité</li>
+
+          <li data-lang="el" class="active">24ωρη οδική βοήθεια</li>
+          <li data-lang="en">24/7 roadside assistance</li>
+          <li data-lang="fr">Assistance routière 24h/24</li>
+
+          <li data-lang="el" class="active">Δωρεάν επιπλέον οδηγός</li>
+          <li data-lang="en">Free additional driver</li>
+          <li data-lang="fr">Conducteur supplémentaire gratuit</li>
+        </ul>
+
+        <div class="cta-row">
+          <a class="btn" data-href-el="https://smilingcars.gr" data-href-en="https://smilingcars.gr/en/" data-href-fr="https://smilingcars.gr/fr/" href="https://smilingcars.gr" target="_blank" rel="noopener">
+            <span data-lang="el" class="active">Δείτε τον στόλο</span>
+            <span data-lang="en">See the fleet</span>
+            <span data-lang="fr">Voir la flotte</span>
+          </a>
+          <span class="tel">smilingcars.gr</span>
         </div>
       </div>
     </article>
@@ -498,6 +546,58 @@
 
   </section>
 
+  <!-- DISCOVER SYROS · content available in Greek, English and French -->
+  <section class="discover-syros" id="discover-syros" aria-labelledby="discover-title">
+    <div class="wrap">
+      <div class="discover-intro">
+        <div>
+          <p class="discover-kicker" data-guide-ui="kicker">Οδηγός νησιού</p>
+          <h2 id="discover-title" data-guide-ui="title">Γνωρίστε τη Σύρο</h2>
+        </div>
+        <p data-guide-ui="intro">Μικρές ιδέες για να ζήσετε το νησί όπως του αξίζει: θάλασσα, γεύσεις, τέχνη, βόλτες και στιγμές για όλη την οικογένεια.</p>
+      </div>
+
+      <div class="guide-slider">
+        <div class="guide-track" id="syros-guide-track" aria-label="Θεματικός οδηγός για τη Σύρο" data-guide-ui="track" tabindex="0">
+          <a class="guide-card guide-beaches" data-guide-topic="beaches" href="syros-guide.html?topic=beaches">
+            <span class="guide-card-icon" aria-hidden="true">☀</span><p class="guide-label">Θάλασσα</p><h3>Παραλίες &amp; κολύμπι</h3><p class="guide-copy">Από τον Γαλησσά ως τις Αγκαθωπές, βρείτε την παραλία που σας ταιριάζει.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-food" data-guide-topic="food" href="syros-guide.html?topic=food">
+            <span class="guide-card-icon" aria-hidden="true">✦</span><p class="guide-label">Γεύσεις</p><h3>Φαγητό στη Σύρο</h3><p class="guide-copy">Τοπικά προϊόντα, αγαπημένα τραπέζια και γεύσεις που θα πάρετε μαζί σας.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-sea" data-guide-topic="sea-activities" href="syros-guide.html?topic=sea-activities">
+            <span class="guide-card-icon" aria-hidden="true">⌇</span><p class="guide-label">Εξερεύνηση</p><h3>Θαλάσσιες δραστηριότητες</h3><p class="guide-copy">Βουτιές, βόλτες στη θάλασσα και μια διαφορετική πλευρά του Αιγαίου.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-kids" data-guide-topic="kids" href="syros-guide.html?topic=kids">
+            <span class="guide-card-icon" aria-hidden="true">★</span><p class="guide-label">Οικογένεια</p><h3>Σύρος για παιδιά</h3><p class="guide-copy">Εύκολες βόλτες, ασφαλείς παραλίες και ημέρες γεμάτες παιχνίδι.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-night" data-guide-topic="nightlife" href="syros-guide.html?topic=nightlife">
+            <span class="guide-card-icon" aria-hidden="true">☾</span><p class="guide-label">Μετά τη δύση</p><h3>Βράδυ στη Σύρο</h3><p class="guide-copy">Ατμόσφαιρα στην Ερμούπολη, ταβερνάκια, ποτό και καλοκαιρινές βόλτες.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-art" data-guide-topic="art-culture" href="syros-guide.html?topic=art-culture">
+            <span class="guide-card-icon" aria-hidden="true">◈</span><p class="guide-label">Πολιτισμός</p><h3>Τέχνη &amp; πολιτισμός</h3><p class="guide-copy">Θέατρο, μουσική, εκθέσεις και η δημιουργική ψυχή της Σύρου.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-landmarks" data-guide-topic="ermoupolis" href="syros-guide.html?topic=ermoupolis">
+            <span class="guide-card-icon" aria-hidden="true">⌂</span><p class="guide-label">Πόλη</p><h3>Ερμούπολη &amp; αξιοθέατα</h3><p class="guide-copy">Νεοκλασικά, πλατείες και η ιστορία της πρωτεύουσας των Κυκλάδων.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-museums" data-guide-topic="museums" href="syros-guide.html?topic=museums">
+            <span class="guide-card-icon" aria-hidden="true">▣</span><p class="guide-label">Ιστορία</p><h3>Μουσεία &amp; ιστορίες</h3><p class="guide-copy">Μικρές στάσεις για να γνωρίσετε καλύτερα το νησί και τους ανθρώπους του.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-villages" data-guide-topic="villages" href="syros-guide.html?topic=villages">
+            <span class="guide-card-icon" aria-hidden="true">△</span><p class="guide-label">Ενδοχώρα</p><h3>Άνω Σύρος &amp; χωριά</h3><p class="guide-copy">Περπατήστε στα στενά και ανακαλύψτε τις ήσυχες πλευρές της Σύρου.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+          <a class="guide-card guide-walks" data-guide-topic="walks" href="syros-guide.html?topic=walks">
+            <span class="guide-card-icon" aria-hidden="true">↝</span><p class="guide-label">Φύση</p><h3>Διαδρομές &amp; πεζοπορία</h3><p class="guide-copy">Θέα στο Αιγαίο, παλιά μονοπάτια και βόλτες με τον δικό σας ρυθμό.</p><span class="guide-link">Ανακαλύψτε →</span>
+          </a>
+        </div>
+        <div class="guide-controls" aria-label="Πλοήγηση οδηγού" data-guide-ui="controls">
+          <button class="guide-control" type="button" data-guide-prev aria-controls="syros-guide-track" aria-label="Προηγούμενες επιλογές">←</button>
+          <button class="guide-control" type="button" data-guide-next aria-controls="syros-guide-track" aria-label="Επόμενες επιλογές">→</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- TRUST -->
   <section class="trust">
     <div class="wrap trust-grid">
@@ -534,9 +634,9 @@
     <h2 data-lang="en">Local, from people who know the island</h2>
     <h2 data-lang="fr">Local, par des gens qui connaissent l'île</h2>
 
-    <p data-lang="el" class="active">Smiling Cars, Syra Rent και Brilla wash &amp; care είναι ανεξάρτητες, οικογενειακές επιχειρήσεις με έδρα τη Σύρο. Μοιράζονται την ίδια δέσμευση: να κάνουν το ταξίδι σας στο νησί πιο εύκολο, πιο άνετο και χωρίς εκπλήξεις — από την πρώτη μέχρι την τελευταία μέρα.</p>
-    <p data-lang="en">Smiling Cars, Syra Rent and Brilla wash &amp; care are independent, family-run businesses based in Syros. They share the same commitment: to make your trip to the island easier, more comfortable and free of surprises — from the first day to the last.</p>
-    <p data-lang="fr">Smiling Cars, Syra Rent et Brilla wash &amp; care sont des entreprises familiales indépendantes basées à Syros. Elles partagent le même engagement&nbsp;: rendre votre séjour sur l'île plus simple, plus confortable et sans surprises — du premier au dernier jour.</p>
+    <p data-lang="el" class="active">Syra Rent, Smiling Cars και Brilla wash &amp; care είναι ανεξάρτητες, οικογενειακές επιχειρήσεις με έδρα τη Σύρο. Μοιράζονται την ίδια δέσμευση: να κάνουν το ταξίδι σας στο νησί πιο εύκολο, πιο άνετο και χωρίς εκπλήξεις — από την πρώτη μέχρι την τελευταία μέρα.</p>
+    <p data-lang="en">Syra Rent, Smiling Cars and Brilla wash &amp; care are independent, family-run businesses based in Syros. They share the same commitment: to make your trip to the island easier, more comfortable and free of surprises — from the first day to the last.</p>
+    <p data-lang="fr">Syra Rent, Smiling Cars et Brilla wash &amp; care sont des entreprises familiales indépendantes basées à Syros. Elles partagent le même engagement&nbsp;: rendre votre séjour sur l'île plus simple, plus confortable et sans surprises — du premier au dernier jour.</p>
   </section>
 
 </main>
@@ -545,18 +645,18 @@
   <div class="wrap">
     <div class="footer-grid">
       <div>
-        <h4>Smiling Cars</h4>
-        <p data-lang="el" class="active" style="font-size:.85rem;">Ενοικίαση αυτοκινήτου Σύρος</p>
-        <p data-lang="en" style="font-size:.85rem;">Car rental Syros</p>
-        <p data-lang="fr" style="font-size:.85rem;">Location de voiture Syros</p>
-        <a href="https://smilingcars.gr" target="_blank" rel="noopener">smilingcars.gr →</a>
-      </div>
-      <div>
         <h4>Syra Rent</h4>
         <p data-lang="el" class="active" style="font-size:.85rem;">Αυτοκίνητα &amp; scooters online</p>
         <p data-lang="en" style="font-size:.85rem;">Cars &amp; scooters online</p>
         <p data-lang="fr" style="font-size:.85rem;">Voitures &amp; scooters en ligne</p>
         <a href="https://www.syrarent.gr" target="_blank" rel="noopener">syrarent.gr →</a>
+      </div>
+      <div>
+        <h4>Smiling Cars</h4>
+        <p data-lang="el" class="active" style="font-size:.85rem;">Ενοικίαση αυτοκινήτου Σύρος</p>
+        <p data-lang="en" style="font-size:.85rem;">Car rental Syros</p>
+        <p data-lang="fr" style="font-size:.85rem;">Location de voiture Syros</p>
+        <a href="https://smilingcars.gr" target="_blank" rel="noopener">smilingcars.gr →</a>
       </div>
       <div>
         <h4>Brilla wash &amp; care</h4>
@@ -574,10 +674,13 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>&copy; 2026 Smiling Cars &middot; Syra Rent &middot; Brilla wash &amp; care</span>
+      <span>&copy; 2026 Syra Rent &middot; Smiling Cars &middot; Brilla wash &amp; care</span>
       <span data-lang="el" class="active">Οικογενειακές επιχειρήσεις της Σύρου</span>
       <span data-lang="en">Family-run businesses of Syros</span>
       <span data-lang="fr">Entreprises familiales de Syros</span>
+      <a data-lang="el" href="image-credits.html">Πηγές φωτογραφιών</a>
+      <a data-lang="en" href="image-credits.html">Image credits</a>
+      <a data-lang="fr" href="image-credits.html">Crédits photos</a>
     </div>
   </div>
 </footer>
@@ -597,21 +700,21 @@
 
 
     <p data-lang="el" class="active">
-      Η Syros Rent και η Smiling Cars προσφέρουν αξιόπιστη ενοικίαση αυτοκινήτου στη Σύρο,
+      Η Syra Rent και η Smiling Cars προσφέρουν αξιόπιστη ενοικίαση αυτοκινήτου στη Σύρο,
       με παραλαβή και παράδοση στο λιμάνι της Ερμούπολης και στο αεροδρόμιο Σύρου.
       Διαθέτουμε οικονομικά αυτοκίνητα, οικογενειακά μοντέλα, αυτόματα αυτοκίνητα και scooter
       για να εξερευνήσετε τις παραλίες, τα χωριά και τα αξιοθέατα του νησιού.
     </p>
 
     <p data-lang="en">
-      Smiling Cars and Syra Rent provide reliable car rental in Syros,
+      Syra Rent and Smiling Cars provide reliable car rental in Syros,
       with convenient delivery and pickup at Syros port and airport.
       Choose from economy cars, family vehicles, automatic cars and scooters
       to explore the beaches, villages and attractions of the island.
     </p>
 
     <p data-lang="fr">
-      Smiling Cars et Syra Rent proposent une location de voitures fiable à Syros,
+      Syra Rent et Smiling Cars proposent une location de voitures fiable à Syros,
       avec livraison et récupération au port et à l'aéroport.
       Découvrez l'île avec des voitures économiques, familiales, automatiques et des scooters.
     </p>
@@ -667,8 +770,8 @@
         "LocalBusiness",
         "AutoRental"
       ],
-      "name": "Smiling Cars",
-      "url": "https://smilingcars.gr",
+      "name": "Syra Rent",
+      "url": "https://www.syrarent.gr",
       "areaServed": {
         "@type": "Place",
         "name": "Syros"
@@ -689,8 +792,8 @@
         "LocalBusiness",
         "AutoRental"
       ],
-      "name": "Syra Rent",
-      "url": "https://www.syrarent.gr",
+      "name": "Smiling Cars",
+      "url": "https://smilingcars.gr",
       "areaServed": {
         "@type": "Place",
         "name": "Syros"
@@ -745,7 +848,7 @@
    "name":"Πού μπορώ να νοικιάσω αυτοκίνητο στη Σύρο;",
    "acceptedAnswer":{
     "@type":"Answer",
-    "text":"Μπορείτε να νοικιάσετε αυτοκίνητο στη Σύρο μέσω της Smiling Cars και της Syra Rent. Υπάρχει δυνατότητα παραλαβής στο λιμάνι ή στο αεροδρόμιο της Σύρου."
+    "text":"Μπορείτε να νοικιάσετε αυτοκίνητο στη Σύρο μέσω της Syra Rent και της Smiling Cars. Υπάρχει δυνατότητα παραλαβής στο λιμάνι ή στο αεροδρόμιο της Σύρου."
    }
   },
   {
@@ -780,6 +883,61 @@
 (function(){
   var LANGS = ["el","en","fr"];
   var HTML_LANG = {el:"el", en:"en", fr:"fr"};
+  var GUIDE_COPY = {
+    el:{ui:{kicker:"Οδηγός νησιού",title:"Γνωρίστε τη Σύρο",intro:"Μικρές ιδέες για να ζήσετε το νησί όπως του αξίζει: θάλασσα, γεύσεις, τέχνη, βόλτες και στιγμές για όλη την οικογένεια.",track:"Θεματικός οδηγός για τη Σύρο",controls:"Πλοήγηση οδηγού",prev:"Προηγούμενες επιλογές",next:"Επόμενες επιλογές",cta:"Ανακαλύψτε →"},cards:{
+      beaches:["Θάλασσα","Παραλίες & κολύμπι","Από τον Γαλησσά ως τις Αγκαθωπές, βρείτε την παραλία που σας ταιριάζει."],
+      food:["Γεύσεις","Φαγητό στη Σύρο","Τοπικά προϊόντα, αγαπημένα τραπέζια και γεύσεις που θα πάρετε μαζί σας."],
+      "sea-activities":["Εξερεύνηση","Θαλάσσιες δραστηριότητες","Βουτιές, βόλτες στη θάλασσα και μια διαφορετική πλευρά του Αιγαίου."],
+      kids:["Οικογένεια","Σύρος για παιδιά","Εύκολες βόλτες, ασφαλείς παραλίες και ημέρες γεμάτες παιχνίδι."],
+      nightlife:["Μετά τη δύση","Βράδυ στη Σύρο","Ατμόσφαιρα στην Ερμούπολη, ταβερνάκια, ποτό και καλοκαιρινές βόλτες."],
+      "art-culture":["Πολιτισμός","Τέχνη & πολιτισμός","Θέατρο, μουσική, εκθέσεις και η δημιουργική ψυχή της Σύρου."],
+      ermoupolis:["Πόλη","Ερμούπολη & αξιοθέατα","Νεοκλασικά, πλατείες και η ιστορία της πρωτεύουσας των Κυκλάδων."],
+      museums:["Ιστορία","Μουσεία & ιστορίες","Μικρές στάσεις για να γνωρίσετε καλύτερα το νησί και τους ανθρώπους του."],
+      villages:["Ενδοχώρα","Άνω Σύρος & χωριά","Περπατήστε στα στενά και ανακαλύψτε τις ήσυχες πλευρές της Σύρου."],
+      walks:["Φύση","Διαδρομές & πεζοπορία","Θέα στο Αιγαίο, παλιά μονοπάτια και βόλτες με τον δικό σας ρυθμό."]}},
+    en:{ui:{kicker:"Island guide",title:"Discover Syros",intro:"Small ideas to experience the island at its best: sea, food, art, walks and moments for the whole family.",track:"Themed guide to Syros",controls:"Guide navigation",prev:"Previous options",next:"Next options",cta:"Discover →"},cards:{
+      beaches:["Sea","Beaches & swimming","From Galissas to Agathopes, find the beach that feels right for you."],
+      food:["Flavours","Food in Syros","Local products, favourite tables and tastes to take home with you."],
+      "sea-activities":["Explore","Sea activities","Swims, trips on the water and a different side of the Aegean."],
+      kids:["Family","Syros for children","Easy walks, welcoming beaches and days made for play."],
+      nightlife:["After sunset","Evening in Syros","Ermoupolis atmosphere, tavernas, drinks and summer strolls."],
+      "art-culture":["Culture","Art & culture","Theatre, music, exhibitions and Syros’s creative spirit."],
+      ermoupolis:["City","Ermoupolis & sights","Neoclassical buildings, squares and the story of the Cyclades’ capital."],
+      museums:["History","Museums & stories","Small stops to get to know the island and its people more deeply."],
+      villages:["Inland","Ano Syros & villages","Walk the narrow lanes and discover the island’s quieter side."],
+      walks:["Nature","Routes & hiking","Aegean views, old paths and walks at your own pace."]}},
+    fr:{ui:{kicker:"Guide de l’île",title:"Découvrez Syros",intro:"Quelques idées pour vivre l’île pleinement : mer, saveurs, art, promenades et moments en famille.",track:"Guide thématique de Syros",controls:"Navigation du guide",prev:"Choix précédents",next:"Choix suivants",cta:"Découvrir →"},cards:{
+      beaches:["Mer","Plages & baignade","De Galissas à Agathopes, trouvez la plage qui vous ressemble."],
+      food:["Saveurs","Manger à Syros","Produits locaux, bonnes tables et saveurs à rapporter chez vous."],
+      "sea-activities":["Explorer","Activités nautiques","Baignades, sorties sur l’eau et une autre facette de l’Égée."],
+      kids:["Famille","Syros avec les enfants","Promenades faciles, plages accueillantes et journées de jeu."],
+      nightlife:["Après le coucher du soleil","Soirée à Syros","L’ambiance d’Ermoupolis, tavernes, verres et promenades d’été."],
+      "art-culture":["Culture","Art & culture","Théâtre, musique, expositions et l’âme créative de Syros."],
+      ermoupolis:["Ville","Ermoupolis & sites à voir","Architecture néoclassique, places et histoire de la capitale des Cyclades."],
+      museums:["Histoire","Musées & histoires","De petites étapes pour mieux connaître l’île et ses habitants."],
+      villages:["Intérieur de l’île","Ano Syros & villages","Parcourez les ruelles et découvrez le côté plus tranquille de l’île."],
+      walks:["Nature","Itinéraires & randonnée","Vues sur l’Égée, anciens sentiers et balades à votre rythme."]}}
+  };
+
+  function applyGuideLang(lang){
+    var guide = GUIDE_COPY[lang] || GUIDE_COPY.el;
+    document.querySelectorAll('[data-guide-ui="kicker"]').forEach(function(el){el.textContent=guide.ui.kicker;});
+    document.querySelectorAll('[data-guide-ui="title"]').forEach(function(el){el.textContent=guide.ui.title;});
+    document.querySelectorAll('[data-guide-ui="intro"]').forEach(function(el){el.textContent=guide.ui.intro;});
+    document.querySelectorAll('[data-guide-ui="track"]').forEach(function(el){el.setAttribute('aria-label',guide.ui.track);});
+    document.querySelectorAll('[data-guide-ui="controls"]').forEach(function(el){el.setAttribute('aria-label',guide.ui.controls);});
+    document.querySelectorAll('[data-guide-prev]').forEach(function(el){el.setAttribute('aria-label',guide.ui.prev);});
+    document.querySelectorAll('[data-guide-next]').forEach(function(el){el.setAttribute('aria-label',guide.ui.next);});
+    document.querySelectorAll('[data-guide-topic]').forEach(function(card){
+      var copy=guide.cards[card.getAttribute('data-guide-topic')];
+      if(!copy) return;
+      card.querySelector('.guide-label').textContent=copy[0];
+      card.querySelector('h3').textContent=copy[1];
+      card.querySelector('.guide-copy').textContent=copy[2];
+      card.querySelector('.guide-link').textContent=guide.ui.cta;
+      card.setAttribute('href','syros-guide.html?topic='+encodeURIComponent(card.getAttribute('data-guide-topic'))+'&lang='+lang);
+    });
+  }
 
   function applyLang(lang){
     if (LANGS.indexOf(lang) === -1) lang = "el";
@@ -805,6 +963,8 @@
       if (href) a.setAttribute("href", href);
     });
 
+    applyGuideLang(lang);
+
     try { localStorage.setItem("syros-hub-lang", lang); } catch(e){}
   }
 
@@ -818,6 +978,22 @@
   try { saved = localStorage.getItem("syros-hub-lang"); } catch(e){}
   var initial = saved || (navigator.language || "el").slice(0,2);
   applyLang(LANGS.indexOf(initial) !== -1 ? initial : "el");
+})();
+</script>
+
+<script>
+(function(){
+  var track = document.getElementById('syros-guide-track');
+  if (!track) return;
+  var card = track.querySelector('.guide-card');
+  function move(direction){
+    var amount = card ? card.getBoundingClientRect().width + 18 : track.clientWidth * .8;
+    track.scrollBy({left: direction * amount, behavior: 'smooth'});
+  }
+  var prev = document.querySelector('[data-guide-prev]');
+  var next = document.querySelector('[data-guide-next]');
+  if (prev) prev.addEventListener('click', function(){ move(-1); });
+  if (next) next.addEventListener('click', function(){ move(1); });
 })();
 </script>
 
