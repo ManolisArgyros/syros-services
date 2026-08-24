@@ -23,6 +23,9 @@
   </style>
   <style>
     h1,.hero h1{font-size:16px;}
+    .highlight a{display:block;color:inherit;text-decoration:none;}
+    .highlight a::after{content:" ↗";color:var(--ochre);font-weight:700;}
+    .highlight a:hover{text-decoration:underline;text-decoration-color:var(--ochre);text-underline-offset:3px;}
   </style>
 </head>
 <body>
@@ -48,6 +51,85 @@
     function href(topic){return "syros-guide.html?topic="+encodeURIComponent(topic)+"&lang="+lang}
     function render(){var ui=UI[lang],t=TOPICS[key][lang],hero=document.getElementById("topic-hero"),pageUrl="https://syrosrent.gr/"+href(key),description=t[2]+" Syros Guide.";document.documentElement.lang=lang;document.title=t[1]+" | Syros Guide";document.getElementById("page-description").setAttribute("content",description);document.getElementById("page-canonical").setAttribute("href",pageUrl);document.getElementById("page-og-title").setAttribute("content",document.title);document.getElementById("page-og-description").setAttribute("content",description);document.getElementById("page-og-url").setAttribute("content",pageUrl);document.getElementById("page-twitter-title").setAttribute("content",document.title);document.getElementById("page-twitter-description").setAttribute("content",description);document.getElementById("guide-schema").textContent=JSON.stringify({"@context":"https://schema.org","@type":"TravelGuide",name:t[1],description:description,url:pageUrl,inLanguage:lang,about:{"@type":"Place",name:"Syros",address:{"@type":"PostalAddress",addressCountry:"GR"}}});hero.className="hero "+TOPICS[key].image;document.getElementById("site-name").textContent=ui.site;document.getElementById("back-link").textContent=ui.back;document.getElementById("topic-label").textContent=t[0];document.getElementById("topic-title").textContent=t[1];document.getElementById("topic-lead").textContent=t[2];document.getElementById("topic-intro").textContent=t[2];document.getElementById("all-topics-title").textContent=ui.all;document.getElementById("footer-label").textContent=ui.footer;document.getElementById("credits-link").textContent=ui.credits;document.querySelectorAll("[data-lang-button]").forEach(function(b){b.classList.toggle("active",b.getAttribute("data-lang-button")===lang)});var highlights=document.getElementById("highlights");highlights.innerHTML="";t[3].forEach(function(item){var a=document.createElement("article");a.className="highlight";var p=document.createElement("p");p.textContent=item;a.appendChild(p);highlights.appendChild(a)});document.getElementById("topic-tip").textContent=ui.tip;var links=document.getElementById("topic-links");links.innerHTML="";Object.keys(TOPICS).forEach(function(k){var a=document.createElement("a");a.href=href(k);a.textContent=TOPICS[k][lang][1];if(k===key)a.setAttribute("aria-current","page");links.appendChild(a)})}
     document.querySelectorAll("[data-lang-button]").forEach(function(b){b.addEventListener("click",function(){lang=b.getAttribute("data-lang-button");history.replaceState(null,"",href(key));render()})});render();
+  })();
+  </script>
+  <script>
+  (function(){
+    var POINTS={
+      beaches:[
+        ["Κίνι: οργανωμένη παραλία και ηλιοβασίλεμα", "https://www.google.com/maps/search/?api=1&query=Kini+Beach+Syros"],
+        ["Γαλησσάς: μεγάλη αμμώδης παραλία με εύκολη πρόσβαση", "https://www.google.com/maps/search/?api=1&query=Galissas+Beach+Syros"],
+        ["Αγκαθωπές: ρηχά νερά και άμμος για χαλαρό μπάνιο", "https://www.google.com/maps/search/?api=1&query=Agathopes+Beach+Syros"]
+      ],
+      food:[
+        ["Λουκούμι Σύρου: δοκιμάστε τοπικά γλυκά στην Ερμούπολη", "https://www.google.com/maps/search/?api=1&query=Loukoumi+Syros+Ermoupoli"],
+        ["Μανούρα και San Michali: αναζητήστε τα τυριά της Σύρου", "https://www.google.com/maps/search/?api=1&query=San+Michali+Syros"],
+        ["Βαπόρια: δείπνο με θέα στα νεοκλασικά και το Αιγαίο", "https://www.google.com/maps/search/?api=1&query=Vaporia+Ermoupoli+Syros"]
+      ],
+      "sea-activities":[
+        ["Κίνι: καγιάκ και θαλάσσιες δραστηριότητες στον όρμο", "https://www.google.com/maps/search/?api=1&query=water+sports+Kini+Syros"],
+        ["Φοίνικας: ξεκινήστε για SUP ή βόλτα με σκάφος", "https://www.google.com/maps/search/?api=1&query=Finikas+Beach+Syros"],
+        ["Αστέρια: κολύμπι με θέα την Ερμούπολη", "https://www.google.com/maps/search/?api=1&query=Asteria+Beach+Syros"]
+      ],
+      kids:[
+        ["Βάρη: προστατευμένος κόλπος με ρηχά νερά", "https://www.google.com/maps/search/?api=1&query=Vari+Beach+Syros"],
+        ["Αζόλιμνος: ήρεμη παραλία κοντά στην Ερμούπολη", "https://www.google.com/maps/search/?api=1&query=Azolimnos+Beach+Syros"],
+        ["Βιομηχανικό Μουσείο: σύντομη εκπαιδευτική στάση στην πόλη", "https://www.google.com/maps/search/?api=1&query=Industrial+Museum+Ermoupoli+Syros"]
+      ],
+      nightlife:[
+        ["Πλατεία Μιαούλη: βραδινή βόλτα ανάμεσα στα νεοκλασικά", "https://www.google.com/maps/search/?api=1&query=Miaouli+Square+Ermoupoli+Syros"],
+        ["Παραλία Ερμούπολης: ποτό και περίπατος στο λιμάνι", "https://www.google.com/maps/search/?api=1&query=Ermoupoli+waterfront+Syros"],
+        ["Θέατρο Απόλλων: ελέγξτε το πρόγραμμα παραστάσεων", "https://www.google.com/maps/search/?api=1&query=Apollon+Theatre+Syros"]
+      ],
+      "art-culture":[
+        ["Θέατρο Απόλλων: ένα από τα σημαντικότερα θέατρα των Κυκλάδων", "https://www.google.com/maps/search/?api=1&query=Apollon+Theatre+Syros"],
+        ["Δημαρχείο Ερμούπολης: αρχιτεκτονική στην πλατεία Μιαούλη", "https://www.google.com/maps/search/?api=1&query=Ermoupoli+Town+Hall+Syros"],
+        ["Βιομηχανικό Μουσείο: ιστορία της ναυπηγικής και της πόλης", "https://www.google.com/maps/search/?api=1&query=Industrial+Museum+Ermoupoli+Syros"]
+      ],
+      ermoupolis:[
+        ["Πλατεία Μιαούλη και Δημαρχείο: ξεκινήστε από το κέντρο", "https://www.google.com/maps/search/?api=1&query=Miaouli+Square+Ermoupoli+Syros"],
+        ["Θέατρο Απόλλων: επισκεφθείτε το ιστορικό θέατρο", "https://www.google.com/maps/search/?api=1&query=Apollon+Theatre+Syros"],
+        ["Βαπόρια: περπατήστε στη συνοικία πάνω από τη θάλασσα", "https://www.google.com/maps/search/?api=1&query=Vaporia+Ermoupoli+Syros"]
+      ],
+      museums:[
+        ["Αρχαιολογικό Μουσείο Σύρου: ξεκινήστε από την πλατεία Μιαούλη", "https://www.google.com/maps/search/?api=1&query=Archaeological+Museum+of+Syros"],
+        ["Βιομηχανικό Μουσείο Ερμούπολης: μηχανές, ναυπηγική και εργασία", "https://www.google.com/maps/search/?api=1&query=Industrial+Museum+Ermoupoli+Syros"],
+        ["Μουσείο Μάρκου Βαμβακάρη: γνωρίστε τον ρεμπέτη της Άνω Σύρου", "https://www.google.com/maps/search/?api=1&query=Markos+Vamvakaris+Museum+Ano+Syros"]
+      ],
+      villages:[
+        ["Άνω Σύρος: περπατήστε στα στενά μέχρι τον Άγιο Νικόλαο", "https://www.google.com/maps/search/?api=1&query=Ano+Syros+Syros"],
+        ["Ποσειδωνία: νεοκλασικές επαύλεις και ήσυχος περίπατος", "https://www.google.com/maps/search/?api=1&query=Posidonia+Syros"],
+        ["Φοίνικας: συνδυάστε το χωριό με μπάνιο στην παραλία", "https://www.google.com/maps/search/?api=1&query=Finikas+Syros"]
+      ],
+      walks:[
+        ["Άνω Σύρος - Ερμούπολη: κατηφορική διαδρομή μέσα από τα στενά", "https://www.google.com/maps/search/?api=1&query=Ano+Syros+to+Ermoupoli+walk"],
+        ["Γαλησσάς - Παναγία Γιάτρισσα: σύντομη βόλτα με θέα", "https://www.google.com/maps/search/?api=1&query=Panagia+Giatissa+Galissas+Syros"],
+        ["Δελφίνι: απομονωμένη παραλία για ήσυχη πεζοπορική έξοδο", "https://www.google.com/maps/search/?api=1&query=Delfini+Beach+Syros"]
+      ]
+    };
+
+    function enhanceGuide(){
+      var params=new URLSearchParams(window.location.search),key=params.get("topic")||"beaches",points=POINTS[key];
+      if(!points) return;
+      document.querySelectorAll("#highlights .highlight").forEach(function(card,index){
+        var point=points[index];
+        if(!point) return;
+        var link=document.createElement("a");
+        link.href=point[1];
+        link.target="_blank";
+        link.rel="noopener noreferrer";
+        link.textContent=point[0];
+        card.textContent="";
+        card.appendChild(link);
+      });
+      var tip=document.getElementById("topic-tip");
+      if(tip) tip.remove();
+    }
+
+    enhanceGuide();
+    document.querySelectorAll("[data-lang-button]").forEach(function(button){
+      button.addEventListener("click",function(){setTimeout(enhanceGuide,0);});
+    });
   })();
   </script>
 </body>
